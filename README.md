@@ -1,45 +1,59 @@
-# adal-angular4-example
-Angular 4 ADAL Wrapper Example
-
-Steps taken to create this project:
-
-Update to latest angular/cli:
-
+```
 npm uninstall -g @angular/cli
 npm cache clean
 npm install -g @angular/cli@latest
+```
+```
+ng new adal-angular4-example --routing --prefix aa4 --dry run
+```
+```
+ng new adal-angular4-example --routing --prefix aa4
+```
+```
+ng g component Home
+ng g component NotFound
+```
+```
+ng serve -o
+```
+```
+npm install --save adal-angular4@latest
+```
+```
+ng g service AdalConfiguration
+```
 
-Create the project:
+npm install --save rxjs@latest
+npm install --save zone.js@latest
+npm install --save core-js@latest
+npm install --save @angular/common@latest
+npm install --save @angular/compiler@latest
+npm install --save @angular/core@latest
+npm install --save @angular/forms@latest
+npm install --save @angular/http@latest
+npm install --save @angular/platform-browser@latest
+npm install --save @angular/platform-browser-dynamic@latest
+npm install --save @angular/router@latest
 
-ng new adal-angular4-example --routing
+npm install --save-dev @angular/cli@latest
+npm install --save-dev @angular/compiler-cli@latest
+npm install --save-dev @types/jasmine@latest
+npm install --save-dev @types/node@latest
+npm install --save-dev codelyzer@latest
+npm install --save-dev jasmine-core@latest
+npm install --save-dev jasmine-spec-reporter@latest
+npm install --save-dev karma@latest
+npm install --save-dev karma-chrome-launcher@latest
+npm install --save-dev karma-cli@latest
+npm install --save-dev karma-jasmine@latest
+npm install --save-dev karma-jasmine-html-reporter@latest
+npm install --save-dev karma-coverage-istanbul-reporter@latest
+npm install --save-dev protractor@latest
+npm install --save-dev ts-node@latest
+npm install --save-dev tslint@latest
+npm install --save-dev typescript@latest
 
-Change to the project directory:
-
-    cd adal-angular4-example
-
-Install adal-angular4 and save in package.json:
-
-    npm install -save adal-angular4
-    npm install
-
-Create the components:
-
-    ng g component Home
-    ng g component PageNotFound
-
-Add routes to app-routing-module.ts:
-
-    import { HomeComponent } from './home/home.component';
-    import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-    const routes: Routes = [
-        { path: '', component: HomeComponent },
-        { path: '**', component: PageNotFoundComponent }
-    ];
-
-
-
-
-
+npm install --save adal-angular@latest
+npm install --save-dev @types/adal@latest
 
 

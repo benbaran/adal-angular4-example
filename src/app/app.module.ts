@@ -6,13 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+import {AdalConfigurationService} from './adal-configuration.service';
+import {Adal4Service} from './adal-angular4/adal4.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AdalConfigurationService, Adal4Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
