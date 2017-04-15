@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 
-import { AdalConfigurationService } from './adal-configuration.service';
 import { Adal4Service } from './adal-angular4/adal4.service';
+
+
+const config: adal.Config = {
+    tenant: 'bbaranjourneycare.onmicrosoft.com',
+    clientId: 'c87f021f-b17e-454d-8303-0c2c07dfaf78'
+}
 
 @Component({
   selector: 'aa4-root',
@@ -11,9 +16,9 @@ import { Adal4Service } from './adal-angular4/adal4.service';
 export class AppComponent {
   title = 'Adal Angular4 Example';
 
-  constructor(private config: AdalConfigurationService, private service: Adal4Service) {
+  constructor(private service: Adal4Service) {
 
-    this.service.init(this.config.config);
+    this.service.init(config);
 
   }
 }

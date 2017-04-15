@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Adal4Service } from '../adal-angular4/adal4.service';
+import { Adal4HTTPService } from '../adal-angular4/adal4-http.service';
 
 @Component({
   selector: 'aa4-home',
@@ -8,34 +9,31 @@ import { Adal4Service } from '../adal-angular4/adal4.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: Adal4Service) {
-
-    console.log('HomeComponent');
+  constructor(private service: Adal4Service, private httpSevice: Adal4HTTPService) {
 
 
+  }
 
-    service.handleWindowCallback();
+
+  ngOnInit() {
+    this.service.handleWindowCallback();
 
     if (!this.service.userInfo.authenticated) {
       this.service.login();
     }
 
-    console.log('username ' + service.userInfo.username);
+    console.log('username ' + this.service.userInfo.username);
 
-    console.log('authenticated: ' + service.userInfo.authenticated);
+    console.log('authenticated: ' + this.service.userInfo.authenticated);
 
-    console.log('name: ' + service.userInfo.profile.name);
+    console.log('name: ' + this.service.userInfo.profile.name);
 
-    console.log('token: ' + service.userInfo.token);
+    console.log('token: ' + this.service.userInfo.token);
 
-    console.log(service.userInfo.profile);
+    console.log(this.service.userInfo.profile);
   }
 
-
-  ngOnInit() {
-  }
-
-  public logout(){
+  public logout() {
     this.service.logOut();
   }
 }
