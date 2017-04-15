@@ -1,9 +1,9 @@
-/// <reference types="angular" />
+
 
 declare namespace adal {
 
     interface AdalAuthenticationServiceProvider {
-        init(configOptions: Config, httpProvider: angular.IHttpProvider): void;
+        init(configOptions: Config, httpProvider: any): void;
     }
 
     interface UserInfo {
@@ -22,8 +22,8 @@ declare namespace adal {
         loginInProgress(): boolean;
         logOut(): void;
         getCachedToken(resource: string): string;
-        acquireToken(resource: string): angular.IPromise<string>;
-        getUser(): angular.IPromise<User>;
+        acquireToken(resource: string): any;
+        getUser(): any;
         getResourceForEndpoint(endpoint: string): string,
         clearCache(): void;
         clearCacheForResource(resource: string): void;

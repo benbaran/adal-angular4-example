@@ -29,7 +29,6 @@
   "devDependencies": {
     "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "^4.0.2",
-    "@types/adal": "^1.0.26",
     "@types/jasmine": "^2.5.47",
     "@types/node": "^7.0.12",
     "codelyzer": "^2.1.1",
