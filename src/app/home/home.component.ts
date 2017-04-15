@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Adal4Service } from '../adal-angular4/adal4.service';
-import { Adal4HTTPService } from '../adal-angular4/adal4-http.service';
+import {Adal4Service, Adal4User} from 'adal-angular4';
 
 @Component({
   selector: 'aa4-home',
@@ -9,12 +8,11 @@ import { Adal4HTTPService } from '../adal-angular4/adal4-http.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: Adal4Service, private httpSevice: Adal4HTTPService) {
+  constructor(private service: Adal4Service) {
 
 
   }
-
-
+  
   ngOnInit() {
     this.service.handleWindowCallback();
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Adal4Service } from './adal-angular4/adal4.service';
+import {Adal4Service} from 'adal-angular4';
 
 
 const config: adal.Config = {
