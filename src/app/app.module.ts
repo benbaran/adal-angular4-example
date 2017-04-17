@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-import {Adal4Service, Adal4HTTPService} from 'adal-angular4';
+import { Adal4Service, Adal4HTTPService } from 'adal-angular4';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,18 @@ import {Adal4Service, Adal4HTTPService} from 'adal-angular4';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [Adal4Service],
-  bootstrap: [AppComponent]
+  providers: [
+    Http,
+    Adal4Service,
+    {
+      provide: Adal4HTTPService,
+      useFactory: Adal4HTTPService.factory,
+      deps: [Http, Adal4Service]
+    }
+  ],
+  bootstrap: [AppComponent],
+
+
 })
 export class AppModule { }
+

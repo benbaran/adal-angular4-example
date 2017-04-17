@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Adal4Service, Adal4User} from 'adal-angular4';
+import {Adal4HTTPService} from 'adal-angular4';
+import {HttpModule} from '@angular/http';
 
 @Component({
   selector: 'aa4-home',
@@ -8,11 +10,11 @@ import {Adal4Service, Adal4User} from 'adal-angular4';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: Adal4Service) {
+  constructor(private service: Adal4Service, private http: Adal4HTTPService) {
 
 
   }
-  
+
   ngOnInit() {
     this.service.handleWindowCallback();
 
@@ -29,6 +31,8 @@ export class HomeComponent implements OnInit {
     console.log('token: ' + this.service.userInfo.token);
 
     console.log(this.service.userInfo.profile);
+
+    this.http.get('http:/localhost/8080/api/test');
   }
 
   public logout() {
