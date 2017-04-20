@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { Adal4Service, Adal4HTTPService} from 'adal-angular4';
+import { Adal4Service, Adal4HTTPService } from 'adal-angular4';
 
 @Component({
   selector: 'aa4-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     // Handle callback if this is a redirect from Azure
-    this.service.handleWindowCallback();
+    this.service.handleWindowCallback(); 
 
     // Check if the user is authenticated. If not, call the login() method
     if (!this.service.userInfo.authenticated) {

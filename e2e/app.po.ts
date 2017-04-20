@@ -6,6 +6,6 @@ export class AdalAngular4ExamplePage {
   }
 
   getParagraphText() {
-    return element(by.css('aa4-root h1')).getText();
+    return element(by.css('aa4-root h1')).getText(); 
   }
 }

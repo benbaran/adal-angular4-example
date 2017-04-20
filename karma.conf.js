@@ -9,11 +9,11 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage-istanbul-reporter'), 
       require('@angular/cli/plugins/karma')
     ],
     client:{
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false // leave Jasmine Spec Runner output visible in browser 
     },
     files: [
       { pattern: './src/test.ts', watched: false }

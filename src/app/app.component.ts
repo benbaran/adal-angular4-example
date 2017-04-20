@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
-import { Adal4Service } from 'adal-angular4';
+import { Adal4Service} from 'adal-angular4';
 
 // Adal Configuration
-const config: adal.Config = {
+const config = {
   tenant: 'bbaranjourneycare.onmicrosoft.com',
   clientId: 'c87f021f-b17e-454d-8303-0c2c07dfaf78'
 }
-
+ 
 @Component({
   selector: 'aa4-root',
   templateUrl: './app.component.html',

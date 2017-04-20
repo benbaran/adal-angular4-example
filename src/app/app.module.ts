@@ -31,9 +31,7 @@ import { Adal4Service, Adal4HTTPService } from 'adal-angular4';
       deps: [Http, Adal4Service]
     }
   ],
-  bootstrap: [AppComponent],
-
-
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 

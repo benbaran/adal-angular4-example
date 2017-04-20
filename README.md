@@ -2,8 +2,7 @@
 
 ___
 
-This is a sample application using the adal-angular4 npm package to authenticate to Azure Active Directory
-
+This is a sample application using the adal-angular4 NPM package to authenticate to Azure Active Directory.
 ___
 
 ## How to Re-Create this Project
@@ -112,9 +111,8 @@ import { Adal4Service, Adal4HTTPService } from 'adal-angular4';         // <-- A
     }                                                                   // <-- ADD
   ],
   bootstrap: [AppComponent],
-
-
 })
+
 export class AppModule { }
 
 ```
@@ -125,7 +123,7 @@ export class AppModule { }
 
 import { Component } from '@angular/core';
 
-import {Adal4Service} from 'adal-angular4';
+import { Adal4Service } from 'adal-angular4';
 
 const config: adal.Config = {                           // <-- ADD
     tenant: 'xxx.onmicrosoft.com',                      // <-- ADD
@@ -150,10 +148,10 @@ export class AppComponent {
 ### Implement Authentication Logic in home.component.ts
 
 ```javascript
-
 import { Component, OnInit } from '@angular/core';
-import {HttpModule} from '@angular/http';
-import {Adal4Service, Adal4HTTPService, Adal4User} from 'adal-angular4';
+import { HttpModule } from '@angular/http';
+
+import { Adal4Service, Adal4HTTPService } from 'adal-angular4';
 
 @Component({
   selector: 'aa4-home',
@@ -163,16 +161,21 @@ import {Adal4Service, Adal4HTTPService, Adal4User} from 'adal-angular4';
 
 export class HomeComponent implements OnInit {
 
-  constructor(private service: Adal4Service, private http: Adal4HTTPService) {
-  }
+  // Inject the ADAL Services
+  constructor(private service: Adal4Service, private http: Adal4HTTPService) { }
 
+  // Check authentication on component load
   ngOnInit() {
+
+    // Handle callback if this is a redirect from Azure
     this.service.handleWindowCallback();
 
+    // Check if the user is authenticated. If not, call the login() method
     if (!this.service.userInfo.authenticated) {
       this.service.login();
     }
 
+    // Log the user information to the console
     console.log('username ' + this.service.userInfo.username);
 
     console.log('authenticated: ' + this.service.userInfo.authenticated);
@@ -184,6 +187,7 @@ export class HomeComponent implements OnInit {
     console.log(this.service.userInfo.profile);
   }
 
+  // Logout Method
   public logout() {
     this.service.logOut();
   }

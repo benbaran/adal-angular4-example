@@ -1,6 +1,6 @@
 {
   "name": "adal-angular4-example",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^4.0.2",
     "@angular/platform-browser-dynamic": "^4.0.2",
     "@angular/router": "^4.0.2",
-    "adal-angular4": "0.0.88",
+    "adal-angular4": "0.0.91",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "rxjs": "^5.3.0",
@@ -34,6 +34,7 @@
     "codelyzer": "^2.1.1",
     "jasmine-core": "^2.5.2",
     "jasmine-spec-reporter": "^3.3.0",
+    "jshint": "^2.9.4",
     "karma": "^1.6.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
