@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import {Adal4Service, Adal4User} from 'adal-angular4';
-import {Adal4HTTPService} from 'adal-angular4';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
+
+import { Adal4Service, Adal4HTTPService} from 'adal-angular4';
 
 @Component({
   selector: 'aa4-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
-  constructor(private service: Adal4Service, private http: Adal4HTTPService) {
+  // Inject the ADAL Services
+  constructor(private service: Adal4Service, private http: Adal4HTTPService) { }
 
-
-  }
-
+  // Check authentication on component load
   ngOnInit() {
+
+    // Handle callback if this is a redirect from Azure
     this.service.handleWindowCallback();
 
+    // Check if the user is authenticated. If not, call the login() method
     if (!this.service.userInfo.authenticated) {
       this.service.login();
     }
 
+    // Log the user information to the console
     console.log('username ' + this.service.userInfo.username);
 
     console.log('authenticated: ' + this.service.userInfo.authenticated);
@@ -31,10 +35,9 @@ export class HomeComponent implements OnInit {
     console.log('token: ' + this.service.userInfo.token);
 
     console.log(this.service.userInfo.profile);
-
-    this.http.get('http:/localhost/8080/api/test');
   }
 
+  // Logout Method
   public logout() {
     this.service.logOut();
   }

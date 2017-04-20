@@ -24,7 +24,6 @@ import { Adal4Service, Adal4HTTPService } from 'adal-angular4';
     AppRoutingModule
   ],
   providers: [
-    Http,
     Adal4Service,
     {
       provide: Adal4HTTPService,
