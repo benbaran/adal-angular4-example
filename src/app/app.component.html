@@ -1,5 +1,15 @@
+<md-toolbar color="primary">
+  <span>ADAL Angular Example</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span><button md-button (click)="logOut()">Logout</button></span>
+
+</md-toolbar>
+
 <div class="container-fluid">
-  <button (click)="logOut()">Logout</button>
+
   <router-outlet></router-outlet>
+
 </div>
- 
