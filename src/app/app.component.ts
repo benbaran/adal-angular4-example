@@ -4,10 +4,10 @@ import { Adal4Service} from 'adal-angular4';
 
 // Adal Configuration
 const config = {
-  tenant: 'bbaranjourneycare.onmicrosoft.com',
-  clientId: 'c87f021f-b17e-454d-8303-0c2c07dfaf78'
-}
- 
+  tenant: 'careportfol.io',
+  clientId: 'f485327e-ddee-468d-8837-da2d399c0390'
+};
+
 @Component({
   selector: 'aa4-root',
   templateUrl: './app.component.html',
@@ -22,5 +22,9 @@ export class AppComponent {
 
     this.service.init(config);
 
+  }
+
+  logOut(){
+    this.service.logOut();
   }
 }

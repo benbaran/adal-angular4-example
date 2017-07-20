@@ -5,6 +5,15 @@ ___
 This is a sample application using the adal-angular4 NPM package to authenticate to Azure Active Directory.
 ___
 
+## Change Log
+
+### 1.0
+
+- Updated HTTP to user Interceptor for Angular 4.3.0+
+- Updated all packages to newest versions
+
+___
+
 ## How to Re-Create this Project
 
 ### Install the Latest Version of Angular CLI
