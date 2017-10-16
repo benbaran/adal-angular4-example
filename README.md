@@ -134,7 +134,7 @@ import { Component } from '@angular/core';
 
 import { Adal4Service } from 'adal-angular4';
 
-const config: adal.Config = {                           // <-- ADD
+const config = {                           		// <-- ADD
     tenant: 'xxx.onmicrosoft.com',                      // <-- ADD
     clientId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'    // <-- ADD
 }                                                       // <-- ADD
