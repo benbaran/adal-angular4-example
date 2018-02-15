@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdalService } from 'adal-angular4';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adalService: AdalService) { }
 
   ngOnInit() {
+    this.adalService.handleWindowCallback();
   }
 
+  login() {
+    this.adalService.login();
+  }
+
+  logout() {
+    this.adalService.logOut();
+  }
+
+  get authenticated(): boolean {
+    return this.adalService.userInfo.authenticated;
+  }
 }

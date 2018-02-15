@@ -30,6 +30,8 @@ index.html:
 
 ng g module Material
 
+ng g component Toolbar
+
 ng g component Home
 ng g component NotFound
 
