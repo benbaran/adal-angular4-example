@@ -1,46 +1,27 @@
-import 'hammerjs';
-
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { Http } from '@angular/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { MaterialModule, MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 
-import { Adal4Service, Adal4HTTPService } from 'adal-angular4';
+import { AppComponent } from './app.component';
+import { MaterialModule } from './material/material.module';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NotFoundComponent
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
-    HttpModule,
     AppRoutingModule,
-    MaterialModule,
-    MdButtonModule,
-    MdCheckboxModule
+    MaterialModule
   ],
-  providers: [
-    Adal4Service,
-    {
-      provide: Adal4HTTPService,
-      useFactory: Adal4HTTPService.factory,
-      deps: [Http, Adal4Service]
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

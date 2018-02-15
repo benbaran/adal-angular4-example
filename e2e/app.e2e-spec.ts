@@ -1,14 +1,14 @@
-import { AdalAngular4ExamplePage } from './app.po';
+import { AppPage } from './app.po';
 
 describe('adal-angular4-example App', () => {
-  let page: AdalAngular4ExamplePage;
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new AdalAngular4ExamplePage();
+    page = new AppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('aa4 works!'); 
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
